@@ -1,6 +1,7 @@
 import React , {useState , useEffect} from 'react';
 import axios from 'axios';
 import UserCard from './UserCard';
+import './UserList.css';
 
 
 const UserList = () => {
@@ -12,7 +13,7 @@ const UserList = () => {
         .catch ((err) => console.log (err))
     } , []);
   return (
-    <div style={{display : 'flex' , flexWrap : 'wrap' , justifyContent : 'space-arround'}}>
+    <div className = 'list' style={{display : 'flex' , flexWrap : 'wrap' }}>
      {users.map ((el)=> (<UserCard user ={el} key ={el.id}/>))} 
     </div>
   )
